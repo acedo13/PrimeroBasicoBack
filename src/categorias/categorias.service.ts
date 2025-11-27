@@ -43,7 +43,7 @@ export class CategoriasService {
     //Logica para actualizar
     async update(id: number, updateCategori: UpdateCategoriaDto) {
         const categoria = await this.findOne(id);
-        if (UpdateCategoriaDto.name && UpdateCategoriaDto.name! == categoria.nombre) {
+        if (updateCategori.nombre && UpdateCategoriaDto.name! == categoria.nombre) {
             const existe = await this.categoriaRepositori.findOne({
                 where: {
                     nombre: updateCategori.nombre
