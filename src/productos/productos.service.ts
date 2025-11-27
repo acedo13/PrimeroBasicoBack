@@ -13,7 +13,9 @@ export class ProductosService {
 
   //listar todos los productos
   async findAll() {
-    return this.productoRepositori.find();
+    return this.productoRepositori.find({
+      relations:['categoria']
+    });
   }
 
 
